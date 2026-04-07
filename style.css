@@ -623,7 +623,6 @@ h3 { font-size: 1.3rem; font-weight: 700; }
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, var(--primary), rgba(167,139,250,0.4));
-  align-self: 68px;
   margin-top: 68px;
   border-radius: 2px;
 }

@@ -135,19 +135,6 @@
   window.addEventListener('scroll', highlightNav, { passive: true });
 
   /* ---- Animated counter for stats ---- */
-  function animateCounter(el, target, suffix, duration) {
-    let start = 0;
-    const stepTime = Math.abs(Math.floor(duration / target));
-    const timer = setInterval(function () {
-      start += Math.ceil(target / (duration / 16));
-      if (start >= target) {
-        start = target;
-        clearInterval(timer);
-      }
-      el.textContent = start + suffix;
-    }, 16);
-  }
-
   const statsObserver = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
@@ -163,7 +150,6 @@
           const suffix = match[3] + match[4] + match[5];
 
           el.textContent = prefix + '0' + suffix;
-          animateCounter({ set: function (v) { el.textContent = prefix + v + suffix; } }, num, '', 1200);
 
           let count = 0;
           const interval = setInterval(function () {
